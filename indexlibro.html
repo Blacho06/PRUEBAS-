@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Sistemas de Ecuaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Guía Completa de Sistemas de Ecuaciones</h1>
+            <p>Todo lo que necesitas saber sobre sistemas de ecuaciones lineales</p>
+        </header>
+
+        <!-- Navegación -->
+        <nav class="nav">
+            <h2>📚 Contenido de la Guía</h2>
+            <ul>
+                <li><a href="#introduccion">1. Introducción a los Sistemas</a></li>
+                <li><a href="#definiciones">2. Definiciones y Conceptos</a></li>
+                <li><a href="#clasificacion">3. Clasificación de Sistemas</a></li>
+                <li><a href="#metodos">4. Métodos de Resolución</a></li>
+                <li><a href="#sustitucion">5. Método de Sustitución</a></li>
+                <li><a href="#igualacion">6. Método de Igualación</a></li>
+                <li><a href="#eliminacion">7. Método de Eliminación</a></li>
+                <li><a href="#gauss">8. Método de Gauss</a></li>
+                <li><a href="#cramer">9. Regla de Cramer</a></li>
+                <li><a href="#matrices">10. Método Matricial</a></li>
+                <li><a href="#ejemplos-2x2">11. Ejemplos 2x2</a></li>
+                <li><a href="#ejemplos-3x3">12. Ejemplos 3x3</a></li>
+                <li><a href="#ejemplos-4x4">13. Ejemplos 4x4</a></li>
+                <li><a href="#ejemplos-5x5">14. Ejemplos 5x5</a></li>
+                <li><a href="#ejemplos-6x6">15. Ejemplos 6x6</a></li>
+                <li><a href="#aplicaciones">16. Aplicaciones Prácticas</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sección 1: Introducción -->
+        <section id="introduccion" class="section">
+            <div class="section-header">
+                <h2>🚀 1. Introducción a los Sistemas de Ecuaciones</h2>
+            </div>
+            <div class="section-content">
+                <p>Los sistemas de ecuaciones son conjuntos de dos o más ecuaciones que deben ser resueltas simultáneamente. Son fundamentales en matemáticas, física, ingeniería, economía y muchas otras disciplinas.</p>
+                
+                <div class="definition-box">
+                    <h3>¿Qué es un Sistema de Ecuaciones?</h3>
+                    <p>Un sistema de ecuaciones es un conjunto de ecuaciones que contienen múltiples variables desconocidas. El objetivo es encontrar los valores de estas variables que satisfagan todas las ecuaciones simultáneamente.</p>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-header">
+                        <h3>Ejemplo Simple de Sistema 2x2</h3>
+                    </div>
+                    <div class="equation-system">
+                        <div class="equation">2x + 3y = 7</div>
+                        <div class="equation">x - y = 1</div>
+                    </div>
+                    <p>Este sistema tiene dos ecuaciones con dos incógnitas: <span class="variable">x</span> e <span class="variable">y</span>.</p>
+                </div>
+
+                <h3>📊 Importancia de los Sistemas de Ecuaciones</h3>
+                <ul>
+                    <li><strong>Modelado matemático:</strong> Representan relaciones complejas en el mundo real</li>
+                    <li><strong>Optimización:</strong> Ayudan a encontrar soluciones óptimas en problemas de recursos</li>
+                    <li><strong>Análisis científico:</strong> Permiten resolver problemas en física, química y biología</li>
+                    <li><strong>Economía:</strong> Modelan mercados, oferta y demanda</li>
+                    <li><strong>Ingeniería:</strong> Diseño de estructuras, circuitos eléctricos, etc.</li>
+                </ul>
+
+                <div class="note-box">
+                    <h4>Nota Importante</h4>
+                    <p>La resolución de sistemas de ecuaciones requiere métodos sistemáticos y precisos. En esta guía aprenderás todos los métodos principales con ejemplos detallados paso a paso.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 2: Definiciones y Conceptos -->
+        <section id="definiciones" class="section">
+            <div class="section-header">
+                <h2>📖 2. Definiciones y Conceptos Fundamentales</h2>
+            </div>
+            <div class="section-content">
+                <div class="definition-box">
+                    <h3>Ecuación Lineal</h3>
+                    <p>Una ecuación lineal es una ecuación algebraica donde cada término es una constante o el producto de una constante por una variable elevada a la primera potencia.</p>
+                    <div class="formula-box">
+                        <div class="formula">a₁x₁ + a₂x₂ + ... + aₙxₙ = b</div>
+                        <p>Donde a₁, a₂, ..., aₙ son los coeficientes y b es el término independiente.</p>
+                    </div>
+                </div>
+
+                <div class="definition-box">
+                    <h3>Sistema de Ecuaciones Lineales</h3>
+                    <p>Un conjunto de m ecuaciones lineales con n incógnitas:</p>
+                    <div class="formula-box">
+                        <div class="formula">
+                            a₁₁x₁ + a₁₂x₂ + ... + a₁ₙxₙ = b₁<br>
+                            a₂₁x₁ + a₂₂x₂ + ... + a₂ₙxₙ = b₂<br>
+                            ⋮<br>
+                            aₘ₁x₁ + aₘ₂x₂ + ... + aₘₙxₙ = bₘ
+                        </div>
+                    </div>
+                </div>
+
+                <h3>🔑 Términos Clave</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Término</th>
+                                <th>Definición</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Variable (Incógnita)</strong></td>
+                                <td>Símbolo que representa un valor desconocido</td>
+                                <td>x, y, z</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coeficiente</strong></td>
+                                <td>Número que multiplica a la variable</td>
+                                <td>En 3x, el coeficiente es 3</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Término Independiente</strong></td>
+                                <td>Número sin variable en la ecuación</td>
+                                <td>En 2x + 5 = 0, es 5</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Solución</strong></td>
+                                <td>Conjunto de valores que satisface todas las ecuaciones</td>
+                                <td>(x=2, y=3)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="definition-box">
+                    <h3>Matriz de Coeficientes</h3>
+                    <p>Representación matricial del sistema donde se organizan los coeficientes:</p>
+                    <div class="formula-box">
+                        <div class="matrix">
+                            a₁₁  a₁₂  ...  a₁ₙ<br>
+                            a₂₁  a₂₂  ...  a₂ₙ<br>
+                            ⋮    ⋮    ⋱   ⋮<br>
+                            aₘ₁  aₘ₂  ...  aₘₙ
+                        </div>
+                    </div>
+                </div>
+
+                <div class="definition-box">
+                    <h3>Matriz Ampliada</h3>
+                    <p>Matriz que incluye tanto los coeficientes como los términos independientes:</p>
+                    <div class="formula-box">
+                        <div class="matrix">
+                            a₁₁  a₁₂  ...  a₁ₙ | b₁<br>
+                            a₂₁  a₂₂  ...  a₂ₙ | b₂<br>
+                            ⋮    ⋮    ⋱   ⋮   | ⋮<br>
+                            aₘ₁  aₘ₂  ...  aₘₙ | bₘ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 3: Clasificación de Sistemas -->
+        <section id="clasificacion" class="section">
+            <div class="section-header">
+                <h2>📊 3. Clasificación de Sistemas de Ecuaciones</h2>
+            </div>
+            <div class="section-content">
+                <p>Los sistemas de ecuaciones se pueden clasificar según diferentes criterios:</p>
+
+                <h3>🔍 Según el Número de Soluciones</h3>
+                
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">1</div>
+                        Sistema Compatible Determinado
+                    </div>
+                    <p><strong>Características:</strong> Tiene una única solución.</p>
+                    <div class="equation-system">
+                        <div class="equation">x + y = 5</div>
+                        <div class="equation">x - y = 1</div>
+                        <p><strong>Solución:</strong> x = 3, y = 2</p>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">∞</div>
+                        Sistema Compatible Indeterminado
+                    </div>
+                    <p><strong>Características:</strong> Tiene infinitas soluciones.</p>
+                    <div class="equation-system">
+                        <div class="equation">2x + 4y = 8</div>
+                        <div class="equation">x + 2y = 4</div>
+                        <p><strong>Solución:</strong> Infinitas (las ecuaciones son equivalentes)</p>
+                    </div>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">∅</div>
+                        Sistema Incompatible
+                    </div>
+                    <p><strong>Características:</strong> No tiene solución.</p>
+                    <div class="equation-system">
+                        <div class="equation">x + y = 5</div>
+                        <div class="equation">x + y = 3</div>
+                        <p><strong>Solución:</strong> No existe (contradicción)</p>
+                    </div>
+                </div>
+
+                <h3>📐 Según la Dimensión</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Ecuaciones</th>
+                                <th>Variables</th>
+                                <th>Notación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Sistema 2x2</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>2 ecuaciones, 2 incógnitas</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema 3x3</td>
+                                <td>3</td>
+                                <td>3</td>
+                                <td>3 ecuaciones, 3 incógnitas</td>
+                            </tr>
+                            <tr>
+                                <td>Sistema nxn</td>
+                                <td>n</td>
+                                <td>n</td>
+                                <td>n ecuaciones, n incógnitas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box">
+                    <h4>Criterio de Rouché-Frobenius</h4>
+                    <p>Para determinar la compatibilidad de un sistema:</p>
+                    <ul>
+                        <li><strong>rg(A) = rg(A*) = n:</strong> Sistema compatible determinado</li>
+                        <li><strong>rg(A) = rg(A*) < n:</strong> Sistema compatible indeterminado</li>
+                        <li><strong>rg(A) ≠ rg(A*):</strong> Sistema incompatible</li>
+                    </ul>
+                    <p>Donde A es la matriz de coeficientes, A* es la matriz ampliada y n es el número de incógnitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 4: Métodos de Resolución -->
+        <section id="metodos" class="section">
+            <div class="section-header">
+                <h2>🔧 4. Métodos de Resolución</h2>
+            </div>
+            <div class="section-content">
+                <p>Existen varios métodos para resolver sistemas de ecuaciones lineales. Cada método tiene sus ventajas según el tipo y tamaño del sistema.</p>
+
+                <h3>🎯 Métodos Algebraicos</h3>
+                
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">S</div>
+                        Método de Sustitución
+                    </div>
+                    <p><strong>Principio:</strong> Despejar una variable de una ecuación y sustituirla en las demás.</p>
+                    <p><strong>Mejor para:</strong> Sistemas pequeños (2x2, 3x3) con coeficientes simples.</p>
+                    <p><strong>Ventajas:</strong> Conceptualmente simple, bueno para sistemas pequeños.</p>
+                    <p><strong>Desventajas:</strong> Puede volverse complejo con sistemas grandes.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">I</div>
+                        Método de Igualación
+                    </div>
+                    <p><strong>Principio:</strong> Despejar la misma variable de diferentes ecuaciones e igualar las expresiones.</p>
+                    <p><strong>Mejor para:</strong> Sistemas 2x2 donde se puede despejar fácilmente.</p>
+                    <p><strong>Ventajas:</strong> Útil cuando las variables se pueden aislar fácilmente.</p>
+                    <p><strong>Desventajas:</strong> Limitado a sistemas pequeños.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">E</div>
+                        Método de Eliminación (Reducción)
+                    </div>
+                    <p><strong>Principio:</strong> Eliminar variables sumando o restando ecuaciones apropiadamente.</p>
+                    <p><strong>Mejor para:</strong> Sistemas de cualquier tamaño, especialmente cuando los coeficientes permiten eliminación directa.</p>
+                    <p><strong>Ventajas:</strong> Eficiente, aplicable a sistemas grandes.</p>
+                    <p><strong>Desventajas:</strong> Requiere manipulación cuidadosa de coeficientes.</p>
+                </div>
+
+                <h3>🧮 Métodos Matriciales</h3>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">G</div>
+                        Método de Gauss (Eliminación Gaussiana)
+                    </div>
+                    <p><strong>Principio:</strong> Convertir la matriz ampliada a forma escalonada mediante operaciones elementales.</p>
+                    <p><strong>Mejor para:</strong> Sistemas grandes, programación computacional.</p>
+                    <p><strong>Ventajas:</strong> Sistemático, eficiente para sistemas grandes.</p>
+                    <p><strong>Desventajas:</strong> Puede requerir muchos cálculos manuales.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">C</div>
+                        Regla de Cramer
+                    </div>
+                    <p><strong>Principio:</strong> Usar determinantes para encontrar cada variable.</p>
+                    <p><strong>Mejor para:</strong> Sistemas cuadrados (nxn) con determinante no nulo.</p>
+                    <p><strong>Ventajas:</strong> Fórmula directa para cada variable.</p>
+                    <p><strong>Desventajas:</strong> Solo aplicable a sistemas cuadrados, ineficiente para sistemas grandes.</p>
+                </div>
+
+                <div class="method-card">
+                    <div class="method-title">
+                        <div class="method-icon">M</div>
+                        Método Matricial (Inversa)
+                    </div>
+                    <p><strong>Principio:</strong> Resolver AX = B como X = A⁻¹B.</p>
+                    <p><strong>Mejor para:</strong> Sistemas cuadrados donde existe A⁻¹.</p>
+                    <p><strong>Ventajas:</strong> Conceptualmente elegante.</p>
+                    <p><strong>Desventajas:</strong> Calcular la inversa puede ser complejo.</p>
+                </div>
+
+                <div class="alert-box">
+                    <h4>Recomendaciones de Uso</h4>
+                    <ul>
+                        <li><strong>Sistemas 2x2:</strong> Sustitución, igualación o eliminación</li>
+                        <li><strong>Sistemas 3x3:</strong> Eliminación, Gauss o Cramer</li>
+                        <li><strong>Sistemas 4x4 o mayores:</strong> Eliminación Gaussiana</li>
+                        <li><strong>Sistemas con parámetros:</strong> Método de Gauss</li>
+                        <li><strong>Sistemas computacionales:</strong> Métodos matriciales</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 5: Método de Sustitución -->
+        <section id="sustitucion" class="section">
+            <div class="section-header">
+                <h2>🔄 5. Método de Sustitución</h2>
+            </div>
+            <div class="section-content">
+                <div class="definition-box">
+                    <h3>Definición</h3>
+                    <p>El método de sustitución consiste en despejar una variable de una ecuación y sustituir esta expresión en las otras ecuaciones del sistema.</p>
+                </div>
+
+                <h3>📝 Algoritmo del Método</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <strong>Elegir una ecuación y una variable</strong><br>
+                        Selecciona la ecuación y variable que sea más fácil de despejar.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <strong>Despejar la variable elegida</strong><br>
+                        Expresa la variable en términos de las otras variables.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <strong>Sustituir en las otras ecuaciones</strong><br>
+                        Reemplaza la variable despejada en todas las demás ecuaciones.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <strong>Resolver el sistema reducido</strong><br>
+                        Resuelve el nuevo sistema con una variable menos.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                        <strong>Encontrar las demás variables</strong><br>
+                        Sustituye hacia atrás para encontrar todas las variables.
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-header">
+                        <h3>Ejemplo: Sistema 2x2</h3>
+                    </div>
+                    <div class="equation-system">
+                        <div class="equation">2x + 3y = 13  ... (1)</div>
+                        <div class="equation">x - y = 1    ... (2)</div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Despejar x de la ecuación (2):</strong><br>
+                            x - y = 1<br>
+                            x = y + 1
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Sustituir en la ecuación (1):</strong><br>
+                            2(y + 1) + 3y = 13<br>
+                            2y + 2 + 3y = 13<br>
+                            5y + 2 = 13
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Resolver para y:</strong><br>
+                            5y = 13 - 2<br>
+                            5y = 11<br>
+                            <span class="variable">y = 11/5 = 2.2</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Encontrar x:</strong><br>
+                            x = y + 1<br>
+                            x = 2.2 + 1<br>
+                            <span class="variable">x = 3.2</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <strong>Verificación:</strong><br>
+                            Ecuación (1): 2(3.2) + 3(2.2) = 6.4 + 6.6 = 13 ✓<br>
+                            Ecuación (2): 3.2 - 2.2 = 1 ✓
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <h4>Consejos para el Método de Sustitución</h4>
+                    <ul>
+                        <li>Elige la variable con coeficiente más simple (preferiblemente 1 o -1)</li>
+                        <li>Evita fracciones cuando sea posible</li>
+                        <li>Siempre verifica tu solución sustituyendo en todas las ecuaciones originales</li>
+                        <li>Para sistemas 3x3 o mayores, puede volverse muy tedioso</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 6: Método de Igualación -->
+        <section id="igualacion" class="section">
+            <div class="section-header">
+                <h2>⚖️ 6. Método de Igualación</h2>
+            </div>
+            <div class="section-content">
+                <div class="definition-box">
+                    <h3>Definición</h3>
+                    <p>El método de igualación consiste en despejar la misma variable de dos ecuaciones diferentes y luego igualar las expresiones obtenidas.</p>
+                </div>
+
+                <h3>📝 Algoritmo del Método</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <strong>Elegir una variable</strong><br>
+                        Selecciona la variable que sea más fácil de despejar en ambas ecuaciones.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <strong>Despejar la variable de ambas ecuaciones</strong><br>
+                        Expresa la variable elegida en términos de las otras variables en ambas ecuaciones.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <strong>Igualar las expresiones</strong><br>
+                        Iguala las dos expresiones obtenidas para formar una nueva ecuación.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <strong>Resolver para la otra variable</strong><br>
+                        Resuelve la ecuación resultante para encontrar el valor de la variable restante.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                        <strong>Encontrar la primera variable</strong><br>
+                        Sustituye el valor encontrado en cualquiera de las expresiones despejadas.
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-header">
+                        <h3>Ejemplo: Sistema 2x2</h3>
+                    </div>
+                    <div class="equation-system">
+                        <div class="equation">3x + 2y = 16  ... (1)</div>
+                        <div class="equation">5x - y = 9   ... (2)</div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Despejar y de la ecuación (1):</strong><br>
+                            3x + 2y = 16<br>
+                            2y = 16 - 3x<br>
+                            y = (16 - 3x)/2 = 8 - 1.5x
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Despejar y de la ecuación (2):</strong><br>
+                            5x - y = 9<br>
+                            -y = 9 - 5x<br>
+                            y = 5x - 9
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Igualar las expresiones:</strong><br>
+                            8 - 1.5x = 5x - 9<br>
+                            8 + 9 = 5x + 1.5x<br>
+                            17 = 6.5x
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Resolver para x:</strong><br>
+                            x = 17/6.5 = 34/13<br>
+                            <span class="variable">x ≈ 2.615</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <strong>Encontrar y:</strong><br>
+                            y = 5x - 9<br>
+                            y = 5(34/13) - 9<br>
+                            y = 170/13 - 117/13 = 53/13<br>
+                            <span class="variable">y ≈ 4.077</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-content">
+                            <strong>Verificación:</strong><br>
+                            Ecuación (1): 3(34/13) + 2(53/13) = 102/13 + 106/13 = 208/13 = 16 ✓<br>
+                            Ecuación (2): 5(34/13) - 53/13 = 170/13 - 53/13 = 117/13 = 9 ✓
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <h4>Ventajas del Método de Igualación</h4>
+                    <ul>
+                        <li>Útil cuando una variable se puede despejar fácilmente</li>
+                        <li>Proporciona una verificación inmediata al igualar</li>
+                        <li>Conceptualmente simple de entender</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 7: Método de Eliminación -->
+        <section id="eliminacion" class="section">
+            <div class="section-header">
+                <h2>➖ 7. Método de Eliminación (Reducción)</h2>
+            </div>
+            <div class="section-content">
+                <div class="definition-box">
+                    <h3>Definición</h3>
+                    <p>El método de eliminación consiste en multiplicar ecuaciones por constantes apropiadas y luego sumar o restar las ecuaciones para eliminar una variable.</p>
+                </div>
+
+                <h3>📝 Algoritmo del Método</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <strong>Identificar la variable a eliminar</strong><br>
+                        Elige la variable cuyos coeficientes permitan una eliminación más sencilla.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <strong>Igualar coeficientes</strong><br>
+                        Multiplica las ecuaciones por constantes para que los coeficientes de la variable elegida sean iguales o opuestos.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <strong>Sumar o restar ecuaciones</strong><br>
+                        Suma las ecuaciones si los coeficientes son opuestos, resta si son iguales.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                        <strong>Resolver la ecuación resultante</strong><br>
+                        Resuelve la ecuación con una variable menos.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                        <strong>Sustituir hacia atrás</strong><br>
+                        Usa el valor encontrado para hallar las demás variables.
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-header">
+                        <h3>Ejemplo 1: Sistema 2x2 - Eliminación Directa</h3>
+                    </div>
+                    <div class="equation-system">
+                        <div class="equation">3x + 2y = 14  ... (1)</div>
+                        <div class="equation">3x - y = 5   ... (2)</div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Observar coeficientes:</strong><br>
+                            Los coeficientes de x son iguales (3), podemos eliminar x directamente.
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Restar (2) de (1):</strong><br>
+                            (3x + 2y) - (3x - y) = 14 - 5<br>
+                            3x + 2y - 3x + y = 9<br>
+                            3y = 9
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Resolver para y:</strong><br>
+                            <span class="variable">y = 3</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>Sustituir en (2):</strong><br>
+                            3x - 3 = 5<br>
+                            3x = 8<br>
+                            <span class="variable">x = 8/3 ≈ 2.667</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-header">
+                        <h3>Ejemplo 2: Sistema 2x2 - Con Multiplicación</h3>
+                    </div>
+                    <div class="equation-system">
+                        <div class="equation">2x + 3y = 7   ... (1)</div>
+                        <div class="equation">4x - 5y = -1  ... (2)</div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Eliminar x multiplicando (1) por -2:</strong><br>
+                            -2(2x + 3y) = -2(7)<br>
+                            -4x - 6y = -14 ... (3)
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>Sumar (3) + (2):</strong><br>
+                            (-4x - 6y) + (4x - 5y) = -14 + (-1)<br>
+                            -11y = -15<br>
+                            <span class="variable">y = 15/11 ≈ 1.364</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>Sustituir en (1):</strong><br>
+                            2x + 3(15/11) = 7<br>
+                            2x + 45/11 = 77/11<br>
+                            2x = 32/11<br>
+                            <span class="variable">x = 16/11 ≈ 1.455</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <h4>Estrategias para el Método de Eliminación</h4>
+                    <ul>
+                        <li><strong>Busca coeficientes que sean múltiplos:</strong> Facilita la eliminación</li>
+                        <li><strong>Elimina primero la variable con coeficientes más simples</strong></li>
+                        <li><strong>Usa fracciones cuando sea necesario:</strong> No evites las fracciones si simplifican el proceso</li>
+                        <li><strong>Para sistemas 3x3:</strong> Elimina la misma variable de dos pares de ecuaciones</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!-- Sección 8: Método de Gauss -->
+        <section id="gauss" class="section">
+            <div class="section-header">
+                <h2>🔢 8. Método de Gauss (Eliminación Gaussiana)</h2>
+            </div>
+            <div class="section-content">
+                <div class="definition-box">
+                    <h3>Definición</h3>
+                    <p>La eliminación Gaussiana es un algoritmo para resolver sistemas de ecuaciones lineales mediante la transformación de la matriz ampliada a forma escalonada.</p>
+                </div>
+
+                <h3>🔄 Operaciones Elementales</h3>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Operación</th>
+                                <th>Descripción</th>
+                                <th>Notación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Intercambio</td>
+                                <td>Intercambiar dos filas</td>
+                                <td>Fi ↔ Fj</td>
+                            </tr>
+                            <tr>
+                                <td>Multiplicación</td>
+                                <td>Multiplicar una fila por una constante no nula</td>
+                                <td>Fi → k·Fi</td>
+                            </tr>
+                            <tr>
+                                <td>Combinación</td>
+                                <td>Sumar a una fila un múltiplo de otra</td>
+                                <td>Fi → Fi + k·Fj</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>📝 Algoritmo del Método</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                        <strong>Escribir la matriz ampliada</strong><br>
+                        Formar la matriz [A|B] con los coeficientes y términos independientes.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                        <strong>Formar escalones</strong><br>
+                        Usar operaciones elementales para crear ceros debajo de la diagonal principal.
+                    </div>
+                </div>
+
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                        <strong>Sustitución hacia atrás</strong><br>
+                        Resolver el sistema triangular resultante desde la última variable.
+                    </div>
+                </div>
+
+                <div class="example-box">
+                    <div class="example-header">
+                        <h3>Ejemplo: Sistema 3x3</h3>
+                    </div>
+                    <div class="equation-system">
+                        <div class="equation">2x + y - z = 3   ... (1)</div>
+                        <div class="equation">x + 3y + 2z = 1  ... (2)</div>
+                        <div class="equation">3x - y + z = 6   ... (3)</div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <strong>Matriz ampliada inicial:</strong><br>
+                            <div class="matrix">
+                                2   1  -1 |  3<br>
+                                1   3   2 |  1<br>
+                                3  -1   1 |  6
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <strong>F1 ↔ F2 (para tener 1 en la posición (1,1)):</strong><br>
+                            <div class="matrix">
+                                1   3   2 |  1<br>
+                                2   1  -1 |  3<br>
+                                3  -1   1 |  6
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <strong>F2 → F2 - 2F1, F3 → F3 - 3F1:</strong><br>
+                            F2: (2,1,-1,3) - 2(1,3,2,1) = (0,-5,-5,1)<br>
+                            F3: (3,-1,1,6) - 3(1,3,2,1) = (0,-10,-5,3)<br>
+                            <div class="matrix">
+                                1   3   2 |  1<br>
+                                0  -5  -5 |  1<br>
+                                0 -10  -5 |  3
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <div class="step-content">
+                            <strong>F2 → -1/5 F2:</strong><br>
+                            <div class="matrix">
+                                1   3   2 |  1<br>
+                                0   1   1 | -1/5<br>
+                                0 -10  -5 |  3
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">5</span>
+                        <div class="step-content">
+                            <strong>F3 → F3 + 10F2:</strong><br>
+                            F3: (0,-10,-5,3) + 10(0,1,1,-1/5) = (0,0,5,1)<br>
+                            <div class="matrix">
+                                1   3   2 |  1<br>
+                                0   1   1 | -1/5<br>
+                                0   0   5 |  1
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">6</span>
+                        <div class="step-content">
+                            <strong>Sustitución hacia atrás:</strong><br>
+                            De F3: 5z = 1 → <span class="variable">z = 1/5</span><br>
+                            De F2: y + z = -1/5 → y + 1/5 = -1/5 → <span class="variable">y = -2/5</span><br>
+                            De F1: x + 3y + 2z = 1 → x + 3(-2/5) + 2(1/5) = 1<br>
+                            x - 6/5 + 2/5 = 1 → x - 4/5 = 1 → <span class="variable">x = 9/5</span>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <span class="step-number">7</span>
+                        <div class="step-content">
+                            <strong>Solución:</strong> x = 9/5, y = -2/5, z = 1/5<br>
+                            <strong>Verificación en las ecuaciones originales ✓</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="note-box">
+                    <h4>Ventajas del Método de Gauss</h4>
+                    <ul>
+                        <li><strong>Sistemático:</strong> Algoritmo claramente defini

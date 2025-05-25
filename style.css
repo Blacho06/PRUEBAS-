@@ -1,0 +1,447 @@
+/* Estilos para la Guía de Sistemas de Ecuaciones */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.3);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Navegación */
+.nav {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.nav h2 {
+    color: #4a90e2;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.nav ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 10px;
+}
+
+.nav li {
+    background: #f8f9fa;
+    border-left: 4px solid #4a90e2;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav li:hover {
+    background: #e3f2fd;
+    transform: translateX(5px);
+}
+
+.nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Secciones */
+.section {
+    background: white;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.section-header {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.section-header h2 {
+    font-size: 1.8em;
+    margin-bottom: 5px;
+}
+
+.section-content {
+    padding: 25px;
+}
+
+/* Definiciones y conceptos */
+.definition-box {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 5px solid #4a90e2;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.definition-box h3 {
+    color: #1976d2;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* Fórmulas */
+.formula-box {
+    background: #f8f9fa;
+    border: 2px solid #4a90e2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.formula-box::before {
+    content: "📐";
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: white;
+    padding: 0 10px;
+    font-size: 1.2em;
+}
+
+.formula {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #1976d2;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+}
+
+/* Ejemplos paso a paso */
+.example-box {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    border-radius: 12px;
+    padding: 25px;
+    margin: 25px 0;
+    border-left: 5px solid #ff9800;
+}
+
+.example-header {
+    background: #ff9800;
+    color: white;
+    margin: -25px -25px 20px -25px;
+    padding: 15px 25px;
+    border-radius: 12px 12px 0 0;
+}
+
+.example-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+}
+
+.step {
+    margin: 15px 0;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border-left: 4px solid #ff9800;
+}
+
+.step-number {
+    background: #ff9800;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 0.9em;
+}
+
+.step-content {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 50px);
+}
+
+/* Matrices */
+.matrix {
+    display: inline-block;
+    border-left: 2px solid #333;
+    border-right: 2px solid #333;
+    padding: 10px 15px;
+    margin: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1em;
+}
+
+.matrix-row {
+    display: block;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Métodos de resolución */
+.method-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid #4a90e2;
+}
+
+.method-title {
+    color: #1976d2;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.method-icon {
+    background: #4a90e2;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* Tablas */
+.table-container {
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+th {
+    background: #4a90e2;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+tr:hover {
+    background: #e3f2fd;
+}
+
+/* Notas importantes */
+.note-box {
+    background: linear-gradient(135deg, #fff9c4 0%, #fff59d 100%);
+    border-left: 5px solid #ffc107;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.note-box::before {
+    content: "💡";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 1.2em;
+}
+
+.note-box h4 {
+    color: #f57f17;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Alertas de error o advertencia */
+.alert-box {
+    background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+    border-left: 5px solid #f44336;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    position: relative;
+}
+
+.alert-box::before {
+    content: "⚠️";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+    font-size: 1.2em;
+}
+
+/* Sistema de ecuaciones visual */
+.equation-system {
+    background: #f8f9fa;
+    border: 2px dashed #4a90e2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.equation {
+    margin: 8px 0;
+    color: #1976d2;
+    font-weight: 500;
+}
+
+/* Botones y elementos interactivos */
+.btn {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2em;
+    }
+    
+    .nav ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-content {
+        padding: 15px;
+    }
+    
+    .formula {
+        font-size: 1.2em;
+    }
+    
+    .step-content {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .step-number {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.method-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* Destacar variables */
+.variable {
+    color: #e91e63;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.coefficient {
+    color: #2196f3;
+    font-weight: bold;
+}
+
+.constant {
+    color: #ff9800;
+    font-weight: bold;
+}
